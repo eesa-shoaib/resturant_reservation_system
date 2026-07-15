@@ -1,4 +1,4 @@
-# BookMe — Modern Restaurant Table Reservation System
+# Modern Restaurant Table Reservation System
 
 A full-stack, real-time table reservation platform. Nuxt 3 frontend, NestJS backend
 (Action-Service pattern), MySQL database.
