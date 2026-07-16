@@ -7,6 +7,7 @@ import { UserRepository } from "./repositories/users.repository";
 import { RegisterUserActionService } from "./actions/register-user-action.service";
 import { LoginActionService } from "./actions/login-action.service";
 import { UsersController } from "./users.controller";
+import { JwtAuthGuard } from "src/common/guards/jwt-auth.guard";
 
 @Module({
 
@@ -23,8 +24,8 @@ import { UsersController } from "./users.controller";
     }),
   ],
   controllers: [UsersController],
-  providers: [UserRepository, RegisterUserActionService, LoginActionService],
-  exports: [TypeOrmModule, UserRepository],
+  providers: [UserRepository, RegisterUserActionService, LoginActionService, JwtAuthGuard],
+  exports: [TypeOrmModule, UserRepository, JwtAuthGuard],
 
 })
 export class UsersModule { }

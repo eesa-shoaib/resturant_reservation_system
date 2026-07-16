@@ -2,7 +2,7 @@ import { Entity, JoinColumn, PrimaryGeneratedColumn, ManyToOne, Column, Unique }
 import { Restaurants } from "src/restaurant-booking/restaurants/entities/restaurant.entity";
 
 @Entity('restaurant_tables')
-@Unique('uq_table_restaurant_labelz', ['restaurant_id', 'label'])
+@Unique('uq_table_restaurant_labelz', ['restaurant', 'label'])
 export class RestaurantTables {
 
   @PrimaryGeneratedColumn({ type: 'bigint', unsigned: true })

@@ -16,7 +16,30 @@ export class RestaurantRepository {
     return this.repo.find();
   }
 
+  existsByNameAndAddress(name: string, address: string) {
+    return this.repo.exists({ where: { name, address } });
+  }
+
   findByID(id: number) {
     return this.repo.findOne({ where: { id } });
   }
+
+  search(name?: string, address?: string) {
+    const where: any = {}
+    if (name) where.name = name;
+    if (address) where.address = address;
+    return this.repo.find({ where });
+  }
+
+  findByOwnerID(owner_id: number) {
+    return this.repo.find({ where: { owner: { id: owner_id } } });
+  }
+
+  // checkOpenTime() {
+
+  // }
+
+  // checkClosingTime() {
+
+  // }
 }
